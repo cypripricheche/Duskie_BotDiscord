@@ -1,0 +1,248 @@
+/* ============================================================================================================================ *
+ *                                                                                                                              *
+ *                                                         MENU RESPONSIVE                                                      *
+ *                                                                                                                              *
+ * ============================================================================================================================ */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NAVIGATION */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: rgba(26, 27, 31, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  position: relative;
+}
+
+/* LOGO LEFT */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: #366A8A; /* couleur des yeux */
+  justify-self: start;
+  transition: all 0.3s ease;
+}
+
+.nav-logo img {
+  height: 50px;  /* Agrandi */
+  width: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-logo span {
+  font-size: 1.7rem;  /* Agrandi */
+  font-weight: 700;
+  color: #366A8A;  /* couleur des yeux */
+  transition: color 0.3s ease;
+}
+
+/* NAV LINKS CENTERED */
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-link i {
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-links {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 12, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.8rem 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: none;
+  }
+
+  .nav-link {
+    flex-direction: column;
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .nav-link i {
+    font-size: 1.2rem;
+  }
+
+  .nav-link:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-primary);
+  }
+}
+
+/* MINI SCREEN */
+@media (max-width: 360px) {
+  .nav-link span {
+    display: none;
+  }
+
+  .nav-link i {
+    font-size: 1.5rem;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  position: relative;
+  width: 32px;   /* largeur des traits */
+  height: 24px;  /* hauteur totale du bouton */
+  cursor: pointer;
+  z-index: 1100;
+  justify-self: end;
+}
+
+.menu-toggle span,
+.menu-toggle::before,
+.menu-toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;  /* épaisseur des traits */
+  background-color: #366A8A; /* couleur des yeux */
+  border-radius: 10px; /* arrondi des bords */
+  transition: 0.4s;
+  margin: auto;
+}
+
+/* Trait haut */
+.menu-toggle::before {
+  top: 0;
+}
+
+/* Trait milieu */
+.menu-toggle span {
+  top: 10px;
+}
+
+/* Trait bas */
+.menu-toggle::after {
+  bottom: 0;
+}
+
+/* Animation en X */
+.menu-toggle.active::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.menu-toggle.active span {
+  opacity: 0;
+}
+
+.menu-toggle.active::after {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+
+
+/* RESPONSIVE BURGER */
+@media (max-width: 1100px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(10, 10, 12, 0.95);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    transform: none;
+    padding: 0;
+  }
+}

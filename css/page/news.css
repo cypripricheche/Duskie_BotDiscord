@@ -1,0 +1,335 @@
+/* ============================================================================================================================ *
+ *                                                                                                                              *
+ *                                                        PRESENTATION NEWS                                                     *
+ *                                                                                                                              *
+ * ============================================================================================================================ */
+
+/* News Page Styles */
+.news-section {
+    padding: 120px 20px 60px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.news-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.news-title {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    background: linear-gradient(45deg, #5865F2, #2DD4BF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+    white-space: nowrap;
+}
+
+
+.news-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.news-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #5865F2, #2DD4BF);
+}
+
+.news-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Nouvel effet de survol pour news-item */
+.news-item:hover {
+    transform: translateX(10px) scale(1.02);
+}
+
+.news-item::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: #5865F2;
+    border-radius: 50%;
+    border: 2px solid #2DD4BF;
+    box-shadow: 0 0 10px rgba(88, 101, 242, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Animation du point au survol */
+.news-item:hover::before {
+    transform: scale(1.5);
+    box-shadow: 0 0 20px rgba(88, 101, 242, 0.8);
+}
+
+.news-date {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.version {
+    background: rgba(88, 101, 242, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #5865F2;
+    transition: all 0.3s ease;
+}
+
+/* Animation de la version au survol */
+.news-item:hover .version {
+    background: rgba(88, 101, 242, 0.4);
+    transform: scale(1.1);
+}
+
+.news-content {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Effet de survol pour news-content */
+.news-content:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(88, 101, 242, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.news-content h2 {
+    color: var(--color-text);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Animation du titre au survol */
+.news-content:hover h2 {
+    color: #5865F2;
+}
+
+.news-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+
+/* Animation des tags au survol */
+.tag:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Nouveauté → Rouge clair */
+.tag.major {
+    background: rgba(239, 68, 68, 0.15);  /* Rouge léger */
+    color: #F87171;  /* Rouge clair */
+}
+
+/* Correctif → Jaune clair */
+.tag.bugfix {
+    background: rgba(247, 184, 1, 0.2);
+    color: #F7B801;
+}
+
+/* Site Web → Vert clair */
+.tag.website {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22C55E;
+}
+
+/* Bot → Bleu-Violet lumineux */
+.tag.bot {
+    background: rgba(99, 102, 241, 0.15);  /* Bleu-Violet léger */
+    color: #818CF8;  /* Bleu-Violet lumineux */
+}
+
+
+/* Roadmap Section avec animations */
+.roadmap-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.roadmap-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #5865F2, #2DD4BF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.roadmap-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.roadmap-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Effet de survol pour roadmap-item */
+.roadmap-item:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(88, 101, 242, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-content h3 {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Animation du titre au survol */
+.roadmap-item:hover .roadmap-content h3 {
+    color: #5865F2;
+}
+
+.roadmap-content ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.roadmap-content li {
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Animation des éléments de liste au survol */
+.roadmap-content li:hover {
+    color: var(--color-text);
+    transform: translateX(10px);
+}
+
+.roadmap-content li::before {
+    content: '→';
+    position: absolute;
+    left: -1.5rem;
+    color: #5865F2;
+    transition: transform 0.3s ease;
+}
+
+/* Animation de la flèche au survol */
+.roadmap-content li:hover::before {
+    transform: translateX(5px);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation delays for news items */
+.news-item:nth-child(1) { animation-delay: 0.2s; }
+.news-item:nth-child(2) { animation-delay: 0.4s; }
+.news-item:nth-child(3) { animation-delay: 0.6s; }
+
+/* Animation delays for roadmap items */
+.roadmap-item:nth-child(1) { animation-delay: 0.8s; }
+.roadmap-item:nth-child(2) { animation-delay: 1s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-section {
+        padding: 100px 15px 40px;
+    }
+
+    .news-title {
+        font-size: 2rem;
+    }
+
+    .news-timeline {
+        padding-left: 1rem;
+    }
+
+    .news-item {
+        padding-left: 1rem;
+    }
+
+    .news-content {
+        padding: 1rem;
+    }
+
+    .roadmap-timeline {
+        grid-template-columns: 1fr;
+    }
+}

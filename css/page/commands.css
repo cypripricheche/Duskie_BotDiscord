@@ -1,0 +1,226 @@
+/* Updated Commands Page Styles */
+.commands-section {
+    padding: 120px 20px 60px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.commands-container {
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.commands-title {
+    font-size: 3rem;
+    background: linear-gradient(45deg, #5865F2, #2DD4BF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+.commands-search {
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(88, 101, 242, 0.3);
+    border-radius: var(--radius-lg);
+    color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
+}
+
+.commands-filters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.filter-btn:hover::before {
+    transform: translateX(100%);
+}
+
+.filter-btn.active {
+    background: var(--color-primary);
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
+}
+
+.commands-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start; /* 🔥 aligné à gauche */
+}
+
+
+.command-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+    
+    /* Ajout pour l'alignement */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px; /* tu peux ajuster cette valeur selon ton contenu */
+    width: 360px; /* fixe */
+    flex-shrink: 0;
+}
+
+.command-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-color: rgba(88, 101, 242, 0.3);
+}
+
+.command-name {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.command-category {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    display: inline-block;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+    align-self: flex-start; /* <-- ajoute ceci */
+}
+
+.command-description {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 48px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  line-clamp: 2;             /* 👈 Propriété standard */
+  box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.command-usage {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-md);
+    font-family: monospace;
+    color: var(--color-text);
+    border-left: 3px solid var(--color-primary);
+}
+
+.command-image {
+    width: 100%;
+    height: 180px; /* 🔥 Hauteur fixe pour uniformiser */
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.command-label {
+  text-align: center;
+  margin-top: 0.4rem;
+  font-weight: bold;
+  font-size: 0.75rem; /* 👈 Taille normale */
+  color: #ff4c4c;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 10px rgba(88, 101, 242, 0.5),
+                     0 0 20px rgba(88, 101, 242, 0.3);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(88, 101, 242, 0.8),
+                     0 0 30px rgba(88, 101, 242, 0.5);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 800px) {
+    .commands-grid {
+      justify-content: center;
+    }
+  }
+  
+  @media (min-width: 801px) and (max-width: 1150px) {
+    .commands-grid {
+      justify-content: center;
+    }
+  }
+  

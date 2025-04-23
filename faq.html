@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Informations générales -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duskie - Bot Discord</title>
+    <meta name="description" content="Duskie est un bot Discord multifonction : modération, tickets, giveaways et bien plus encore. Simple, rapide et personnalisable pour toutes les communautés.">
+
+    <!-- Référencement & réseaux sociaux -->
+    <meta property="og:title" content="Duskie - Bot Discord">
+    <meta property="og:description" content="Duskie est un bot Discord multifonction idéal pour la modération, les tickets, les giveaways, et bien plus ! Simple, rapide, et personnalisable.">
+    <meta property="og:image" content="Image/02〡Duskie.png">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Image/02〡Duskie.png">
+
+    <!-- Styles CSS + JS -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/navigation.js" defer></script>
+    <script src="js/faq.js" defer></script>
+
+    <!-- Icones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="Image/02〡Duskie.png" alt="NexBot Logo" class="logo-mascotte">
+                <span>DUSKIE</span>
+            </a>
+
+            <!-- Bouton burger -->
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Accueil</span></a></li>
+                <li><a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i><span>Nouveautés</span></a></li>
+                <li><a href="commands.html" class="nav-link"><i class="fas fa-terminal"></i><span>Commandes</span></a></li>
+                <li>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1355558781026570354"
+                        class="nav-link"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-discord"></i>
+                        <span>Ajouter</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h1>Questions Fréquentes</h1>
+            
+            <div class="faq-search">
+                <input type="text" id="faqSearch" placeholder="Rechercher une question..." class="search-input">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+
+            <div class="faq-categories">
+                <button class="category-btn active" data-category="all">Tout</button>
+                <button class="category-btn" data-category="general">Général</button>
+                <button class="category-btn" data-category="setup">Configuration</button>
+                <button class="category-btn" data-category="features">Fonctionnalités</button>
+                <button class="category-btn" data-category="support">Support</button>
+            </div>
+
+            <div class="faq-grid">
+                <!-- Questions Générales -->
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Qu'est-ce que Duskie ?</h3>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Duskie est un bot Discord proposant des fonctionnalités de modération avancées et des outils liés à l'univers de Clash of Clans.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Le bot est-il gratuit ?</h3>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, Duskie est entièrement gratuit ! Toutes les fonctionnalités principales sont accessibles sans frais. Nous pourrions proposer des fonctionnalités premium à l'avenir, mais le cœur du bot restera toujours gratuit.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Le premium sera-t-il forcément payant ?</h3>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Non, le premium ne sera pas uniquement payant. Il sera possible de l’obtenir gratuitement en étant actif et en gagnant une monnaie virtuelle grâce aux pubs présentes sur le site et le serveur Discord.</p>
+                    </div>
+                </div>
+
+                <!-- Questions de Configuration -->
+                <div class="faq-item" data-category="setup">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Comment ajouter Duskie à mon serveur ?</h3>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pour ajouter Duskie à votre serveur :</p>
+                        <ol>
+                            <li>Cliquez sur le bouton "Ajouter" dans la navigation</li>
+                            <li>Connectez-vous à Discord si ce n'est pas déjà fait</li>
+                            <li>Sélectionnez le serveur où vous souhaitez ajouter le bot</li>
+                            <li>Vérifiez les permissions et cliquez sur "Autoriser"</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!--
+                <div class="faq-item" data-category="setup">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Comment configurer l'anti-raid ?</h3>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pour configurer l'anti-raid :</p>
+                        <ol>
+                            <li>Utilisez la commande <code>/antiraid panel</code></li>
+                            <li>Configurez les paramètres selon vos besoins</li>
+                            <li>Activez l'anti-raid avec <code>/antiraid toggle</code></li>
+                            <li>Gérez la whitelist avec les commandes <code>/antiraidwl</code></li>
+                        </ol>
+                    </div>
+                </div>
+                -->
+                <!-- Questions sur les Fonctionnalités -->
+                <div class="faq-item" data-category="features">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Quelles sont les principales fonctionnalités ?</h3>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Duskie offre de nombreuses fonctionnalités, notamment :</p>
+                        <ul>
+                            <li>Modération automatique</li>
+                            <li>Gestion des rôles réactifs</li>
+                            <li>Système de logs détaillé</li>
+                            <li>Protection contre le spam ( + tard )</li>
+                            <li>Système de logs de guerre de clans</li>
+                            <li>Et bien plus encore !</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Questions de Support -->
+                <div class="faq-item" data-category="support">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Comment obtenir de l'aide ?</h3>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Si vous avez besoin d'aide :</p>
+                        <ul>
+                            <li>Rejoignez notre <a href="https://discord.gg/VYPmKresEg">serveur Discord</a> de support</li>
+                            <li>Consultez la liste des commandes avec <code>/help</code></li>
+                            <li>Signalez un bug avec <code>/bugreport</code></li>
+                            <li>Contactez directement notre équipe de support sur Discord</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Duskie</h3>
+                <p>Le bot Discord tout-en-un pour votre serveur</p>
+                <div class="footer-social">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1355558781026570354"
+                       class="social-icon"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                       <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <ul class="footer-links">
+                    <li><a href="rules.html">Règlement</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="https://discord.gg/VYPmKresEg" target="_blank" rel="noopener noreferrer">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Légal</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Politique de Confidentialité</a></li>
+                    <li><a href="terms.html">Conditions d'Utilisation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Duskie. Tous droits réservés.</p>
+            <p class="footer-disclaimer">En utilisant Duskie, vous acceptez nos <a href="terms.html">Conditions d'Utilisation</a> et notre <a href="privacy.html">Politique de Confidentialité</a>.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/faq/faq.js"></script>
+</body>
+</html>
