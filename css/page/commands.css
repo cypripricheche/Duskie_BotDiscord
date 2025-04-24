@@ -189,6 +189,11 @@
   letter-spacing: 0.5px;
 }
 
+.highlight-rose {
+  color: #ff66cc; /* 🌸 Rose clair (tu peux changer la teinte) */
+  font-weight: bold;
+}
+
 
 @keyframes titleGlow {
     from {
