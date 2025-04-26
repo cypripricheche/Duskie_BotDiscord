@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mise à jour des compteurs
     const categoryCounts = {
         all: 0,
-        admin: 0,
         moderation: 0,
+        coc: 0,          // 🛠 Ajouté la catégorie "coc"
         fun: 0,
         utility: 0
-    };
+    };    
 
     commandCards.forEach(card => {
         const cat = card.dataset.category;
