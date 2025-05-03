@@ -298,6 +298,23 @@
     }
 }
 
+/*
+.command {
+  background-color: #2f3136;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-family: "Courier New", monospace;
+  font-size: 0.95em;
+}
+*/
+
+.command {
+  font-family: monospace;
+  font-weight: bold;
+  color: #5865f2; /* Couleur violette de Discord */
+}
+
 /* Animation delays for news items */
 .news-item:nth-child(1) { animation-delay: 0.2s; }
 .news-item:nth-child(2) { animation-delay: 0.4s; }
