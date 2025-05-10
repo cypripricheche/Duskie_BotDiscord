@@ -65,6 +65,28 @@
             <h1 class="news-title">Nouveautés Duskie</h1>
             <div class="news-timeline">
 
+                <!-- Neuvième MAJ -->
+                <div class="news-item bugfix-update">
+                    <div class="news-date">
+                        <span class="date">10 Mai 2025</span>
+                        <span class="version">v1.4.3</span>
+                    </div>
+                    <div class="news-content">
+                        <h2>🧹 Nettoyage automatique des fils inactifs</h2>
+                        <div class="news-tags">
+                            <span class="tag bugfix">Correctif</span>
+                            <span class="tag bot">Bot Discord</span>
+                        </div>
+                        <div class="news-details">
+                            <ul>
+                                <li>Le bot signale s’il ne peut pas supprimer ses fils inactifs à cause d’un manque de permissions.</li>
+                                <li>Un seul message est envoyé par salon toutes les 24h pour éviter les répétitions.</li>
+                                <li>Les fils non créés par le bot ou ne contenant pas "guerre" sont ignorés.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Huitième MAJ -->
                 <div class="news-item major-update">
                     <div class="news-date">
@@ -80,9 +102,9 @@
                         <div class="news-details">
                             <ul>
                                 <li>Meilleure gestion des salons de guerre (suppression, remplacement, permissions).</li>
-                                <li>Si un utilisateur mentionne un salon que le bot ne peut pas gérer, aucune configuration invalide n’est enregistrée.</li>
-                                <li>Ajout d’un message clair si le rôle de l’utilisateur est au-dessus de celui du bot.</li>
-                                <li>Robustesse accrue en cas de suppression du salon ou du bot du serveur.</li>
+                                <li>Le bot ignore les salons qu’il ne peut pas utiliser ou modifier.</li>
+                                <li>Un message informe si le rôle de l’utilisateur est au-dessus de celui du bot.</li>
+                                <li>Le système reste stable même si un salon ou le bot est supprimé.</li>
                             </ul>
                         </div>
                     </div>
