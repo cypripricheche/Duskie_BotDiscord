@@ -190,6 +190,11 @@
     color: #818CF8;  /* Bleu-Violet lumineux */
 }
 
+/* Amélioration → Violet doux */
+.tag.improvement {
+    background: rgba(168, 85, 247, 0.15);  /* Violet léger */
+    color: #A855F7;  /* Violet vif */
+}
 
 /* Roadmap Section avec animations */
 .roadmap-section {
