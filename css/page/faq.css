@@ -1,4 +1,5 @@
 /* FAQ Section Styles */
+
 .faq-section {
     padding: 120px 20px 60px;
     min-height: 100vh;
@@ -28,6 +29,7 @@
     animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
+/* Search */
 .faq-search {
     position: relative;
     margin-bottom: 2rem;
@@ -58,6 +60,7 @@
     color: var(--color-text-secondary);
 }
 
+/* Category Buttons */
 .faq-categories {
     display: flex;
     gap: 1rem;
@@ -98,6 +101,7 @@
     box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
 }
 
+/* FAQ Grid & Items */
 .faq-grid {
     display: grid;
     gap: 1.5rem;
@@ -157,16 +161,21 @@
     max-height: 1000px;
 }
 
-.faq-answer p {
+.faq-answer p,
+.faq-answer ul,
+.faq-answer ol {
     color: var(--color-text-secondary);
+}
+
+.faq-answer p {
     line-height: 1.6;
     margin: 0;
 }
 
-.faq-answer ul, .faq-answer ol {
+.faq-answer ul,
+.faq-answer ol {
     margin: 1rem 0;
     padding-left: 1.5rem;
-    color: var(--color-text-secondary);
 }
 
 .faq-answer li {
@@ -191,17 +200,58 @@
     text-decoration: underline;
 }
 
-@keyframes titleGlow {
-    from {
-        text-shadow: 0 0 10px rgba(88, 101, 242, 0.5),
-                     0 0 20px rgba(88, 101, 242, 0.3);
-    }
-    to {
-        text-shadow: 0 0 20px rgba(88, 101, 242, 0.8),
-                     0 0 30px rgba(88, 101, 242, 0.5);
-    }
+/* Intro Item Styling */
+.faq-item.intro {
+    background: linear-gradient(135deg, rgba(88,101,242,0.1), rgba(255,255,255,0.03));
+    border: 1px solid rgba(88,101,242,0.4);
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.15);
 }
 
+.faq-item.intro .faq-question {
+    border-left: 5px solid #8ab4f8;
+    background: rgba(43, 46, 66, 0.6);
+    border-radius: 12px 0 0 12px;
+    font-size: 1.1rem;
+    padding-left: 1.2rem;
+}
+
+.faq-item.intro .faq-question .highlighted {
+    color: #8ab4f8;
+    font-weight: bold;
+    font-size: 1.15rem;
+}
+
+.faq-item.intro .faq-question i.fas.fa-star {
+    color: #facc15;
+    font-size: 1.3rem;
+}
+
+/* Section Divider */
+.faq-subsection-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0 0.5rem;
+    width: 100%;
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.faq-subsection-divider::before,
+.faq-subsection-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(88, 101, 242, 0.2);
+    margin: 0 10px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .faq-section {
         padding: 100px 15px 40px;
