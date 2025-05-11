@@ -59,11 +59,30 @@ document.addEventListener('DOMContentLoaded', () => {
             const question = item.querySelector('h3').textContent.toLowerCase();
             const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
             const itemCategory = item.dataset.category;
-            
+
             const matchesSearch = question.includes(searchTerm) || answer.includes(searchTerm);
             const matchesCategory = category === 'all' || itemCategory === category;
-            
+
             item.style.display = matchesSearch && matchesCategory ? 'block' : 'none';
+        });
+
+        const sectionDividers = document.querySelectorAll('.faq-subsection-divider');
+        sectionDividers.forEach(divider => {
+            const sectionText = divider.dataset.category;
+            const currentCat = category.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+            const shouldShowDivider =
+                currentCat === 'all' || sectionText === currentCat;
+
+            if (shouldShowDivider) {
+                const relatedItems = Array.from(faqItems).filter(item =>
+                    item.dataset.category === sectionText &&
+                    item.style.display !== 'none'
+                );
+                divider.style.display = relatedItems.length > 0 ? 'flex' : 'none';
+            } else {
+                divider.style.display = 'none';
+            }
         });
     }
 });
