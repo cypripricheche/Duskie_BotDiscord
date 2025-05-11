@@ -29,6 +29,34 @@
     animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
+.commands-intro {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 14px;
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.7;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    text-align: center; /* ✅ ceci centre le texte uniquement */
+}
+
+.commands-intro p {
+    margin: 0.75rem 0;
+}
+
+.commands-intro strong {
+    color: #8ab4f8;
+}
+
+.commands-intro em {
+    color: #50fa7b;
+    font-style: normal;
+}
+
 .commands-search {
     margin-bottom: 2rem;
 }
@@ -228,4 +256,3 @@
       justify-content: center;
     }
   }
-  
